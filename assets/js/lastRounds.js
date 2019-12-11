@@ -3,7 +3,6 @@ window.onload = () =>{
         axios.get("https://bolao2019otavio.herokuapp.com/rounds/all")
             .then((ans)=>{
                 for (comps of ans.data) {
-                    console.log(comps.competitionName)
                     $("#sel").append('<option id="'+comps.competitionName +'">'+comps.competitionName+'</option>');
                 }
                 
@@ -20,7 +19,6 @@ window.onload = () =>{
                    "x-access-token": localStorage.getItem("token")
                 }})
                 .then((ans)=>{
-                    console.log(ans)
                     $("#hintTimes").empty();
                     $("#listTimes").empty();
                     $("#sp").empty();
@@ -75,6 +73,7 @@ window.onload = () =>{
                             "x-access-token" : localStorage.getItem("token")
                         }})
                         .then(ans=>{
+                            console.log(ans.data)
                             var topscore = ans.data.sort((a,b)=>{
                                 return a.score - b.score
                             })
@@ -82,12 +81,12 @@ window.onload = () =>{
                                 return a.hits - b.hits
                             })
                             
-                            $("#bp").append("<li>"+topscore.reverse()[0] +"</li>")
-                            $("#bp").append("<li>"+topscore.reverse()[1] +"</li>")
-                            $("#bp").append("<li>"+topscore.reverse()[2] +"</li>")
-                            $("#ba").append("<li>"+topshits.reverse()[0] +"</li>")
-                            $("#ba").append("<li>"+topshits.reverse()[1] +"</li>")
-                            $("#ba").append("<li>"+topshits.reverse()[2] +"</li>")
+                            $("#bp").append("<li>"+topscore.reverse()[0].score +"</li>")
+                            $("#bp").append("<li>"+topscore.reverse()[1].score +"</li>")
+                            $("#bp").append("<li>"+topscore.reverse()[2].score +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[0].hits +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[1].hits +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[2].hits +"</li>")
 
                         })
                         
