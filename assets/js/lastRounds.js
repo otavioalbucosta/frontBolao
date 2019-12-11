@@ -69,7 +69,7 @@ window.onload = () =>{
                             
                         }
 
-                        axios.post("https://bolao2019otavio.herokuapp.com/scores/ranking",{
+                        axios.post("https://bolao2019otavio.herokuapp.com/scores/rankings",{
                         competitionName: $("#sel").children("option:selected").text()
                         }, {headers: {
                             "x-access-token" : localStorage.getItem("token")
