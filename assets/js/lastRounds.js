@@ -28,9 +28,9 @@ window.onload = () =>{
                     $("#sa").empty();
                     $("#ba").empty();
                     $("#sp").append("Sua pontuação: ");
-                    $("#bp").append("Melhor pontuação: ");
+                    $("#bp").append("<li>Melhor pontuação:</li> ");
                     $("#sa").append("Seus acertos: ");
-                    $("#ba").append("Maiores acertos: ");
+                    $("#ba").append("<li>Maiores acertos:</li> ");
                     if (ans.data == "Não há palpites desse usuário para esta rodada"){
                         $("#hintTimes").append('<li class="list-group-item">'+ans.data+'</li>')
                         $("#listTimes").append('<li class="list-group-item">Não podemos mostras o round atual pra você</li>')
@@ -52,6 +52,7 @@ window.onload = () =>{
                     console.log(err)
                 })
                 }
+                    
                 
                     axios.post("https://bolao2019otavio.herokuapp.com/scores/calculate", {
                         competitionName: $("#sel").children("option:selected").text()
@@ -67,6 +68,28 @@ window.onload = () =>{
                             $("#t"+team.TeamId).attr("class", "list-group-item-success")
                             
                         }
+
+                        axios.post("https://bolao2019otavio.herokuapp.com/scores/ranking",{
+                        competitionName: $("#sel").children("option:selected").text()
+                        }, {headers: {
+                            "x-access-token" : localStorage.getItem("token")
+                        }})
+                        .then(ans=>{
+                            var topscore = ans.data.sort((a,b)=>{
+                                return a.score - b.score
+                            })
+                            var topshits = ans.data.sort((a,b)=>{
+                                return a.hits - b.hits
+                            })
+                            
+                            $("#bp").append("<li>"+topscore.reverse()[0] +"</li>")
+                            $("#bp").append("<li>"+topscore.reverse()[1] +"</li>")
+                            $("#bp").append("<li>"+topscore.reverse()[2] +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[0] +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[1] +"</li>")
+                            $("#ba").append("<li>"+topshits.reverse()[2] +"</li>")
+
+                        })
                     })
                 })
                 .catch((err)=>{
