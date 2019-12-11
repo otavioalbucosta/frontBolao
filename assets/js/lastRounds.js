@@ -90,7 +90,7 @@ window.onload = () =>{
                         })
                         
                     })
-                })
+                
                 .catch((err)=>{
                     console.log(err)
                 })
