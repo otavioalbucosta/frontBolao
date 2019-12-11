@@ -1,4 +1,4 @@
-window.onload = () =>{
+window.onload = ()=>{
     $(document).ready(function () {
         axios.get("https://bolao2019otavio.herokuapp.com/rounds/all")
             .then((ans)=>{
@@ -95,11 +95,15 @@ window.onload = () =>{
                     console.log(err)
                 })
                 }
+
                     
                 
                     
 
 
             })
-    });
+
+    })
+
+})
 }
