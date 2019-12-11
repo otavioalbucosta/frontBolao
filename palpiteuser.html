@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Blue.css">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Login-Form.css">
+</head>
+
+<body style="background-color: #71a44a;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" id="brand" href="#">Bem vindo:&nbsp;</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html">Perfil</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="lastRounds.html">Ultima rodada</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="palpiteuser.html">Palpite</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" id="logout">Log Out</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container border rounded" style="background-color: #f2f5f8;">
+            <h1>Faça seu palpite:</h1>
+            <p>Arraste e solte os times de acordo com a sua colocação, após isso, clique no botão abaixo pra efetivar seu palpite!</p>
+            <ul class="list-group" id="sortable"></ul>
+            <button id="sendButton" class="btn btn-success">Enviar</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/palpiteuser.js"></script>
+    <script src="assets/js/logout.js"></script>
+</body>
+
+</html>
