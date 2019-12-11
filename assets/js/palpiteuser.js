@@ -72,7 +72,17 @@ window.onload=()=>{
                                     axios.post("https://bolao2019otavio.herokuapp.com/hints/registerHint",values)
                                         .then(ans=>{
                                             console.log(ans)
-                                            window.location.href = "lastRounds.html"
+                                            axios.post("https://bolao2019otavio.herokuapp.com/score/calculate",{
+                                                competitionName: lastround
+                                            }, {headers:{
+                                                "x-access-token" : localStorage.getItem("token")
+                                            }})
+                                            .then(ans=>{
+                                                window.location.href = "lastRounds.html"
+                                            })
+                                            
+
+                                            
                                         })
                                 })
                                 .catch(err=>{
