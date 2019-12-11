@@ -49,10 +49,9 @@ window.onload = () =>{
                 .catch((err)=>{
                     console.log(err)
                 })
-                }
-                    
-                
-                    axios.post("https://bolao2019otavio.herokuapp.com/scores/calculate", {
+
+
+                axios.post("https://bolao2019otavio.herokuapp.com/scores/calculate", {
                         competitionName: $("#sel").children("option:selected").text()
                     },{
                         headers: {"x-access-token": localStorage.getItem("token")}
@@ -95,6 +94,10 @@ window.onload = () =>{
                 .catch((err)=>{
                     console.log(err)
                 })
+                }
+                    
+                
+                    
 
 
             })
