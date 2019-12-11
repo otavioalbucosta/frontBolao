@@ -90,6 +90,7 @@ window.onload = () =>{
                             $("#ba").append("<li>"+topshits.reverse()[2] +"</li>")
 
                         })
+                        
                     })
                 })
                 .catch((err)=>{
